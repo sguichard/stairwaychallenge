@@ -1,4 +1,4 @@
-class StairwaysController < ActionController::Base
+class StairwaysController < ApplicationController
   protect_from_forgery
   
   def index
