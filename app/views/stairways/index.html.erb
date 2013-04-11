@@ -1,6 +1,3 @@
-<!DOCTYPE html>
-<html>
-<head>
   <title>Stairways</title>
   <%#= stylesheet_link_tag    "application", :media => "all" %>
   <%= stylesheet_link_tag    'gmaps4rails' %>
@@ -12,6 +9,21 @@
 
 <%= gmaps( :kml => {:data => '[ { url:"http://www.communitywalk.com/xml/kml/388644?lat=47.628843&lng=-122.266846&zoom=11"}]' } ) %> <%= yield :scripts %>
 
-</body>
-</html>
-
+<table class="table">
+  <th>
+      Stairway Name
+    <td>
+      Number of Stairs
+    </td>
+  </th>
+  <%@stairways.each do |stairway|%>
+    <tr>
+      <td>
+        <%= stairway.name %>
+      </td>
+      <td>
+        <%= stairway.stairs %>
+      </td>
+    </tr>
+  <%end%>
+</table>
