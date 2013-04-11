@@ -1,3 +1,3 @@
 class Stairway < ActiveRecord::Base
-  # attr_accessible :title, :body
+   has_many :user_run 
 end
