@@ -18,6 +18,8 @@ doc.xpath("/kml/Document/Folder/Folder/Placemark").each do |place|
   stairway.name = (place/'./name').text
   stairway.description = desc
   stairway.stairs = stairs.captures[0].to_i if stairs
+  stairway.longitude = (place/'./LookAt/longitude').text
+  stairway.latitude =  (place/'./LookAt/latitude').text
   stairway.save!
 end
 
