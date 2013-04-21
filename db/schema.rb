@@ -11,6 +11,8 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
+ActiveRecord::Schema.define(:version => 20130421231426) do
+
   create_table "stairways", :force => true do |t|
     t.string   "name"
     t.text     "description"
@@ -21,7 +23,7 @@
     t.integer  "stairs"
   end
 
-  create_table "user_run", :force => true do |t|
+  create_table "user_runs", :force => true do |t|
     t.datetime "timestamp"
     t.integer  "stairway_id"
     t.datetime "created_at",  :null => false
