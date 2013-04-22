@@ -11,20 +11,18 @@
 <%= yield :scripts %>
 
 <table class="table">
-  <th>
-      Stairway Name
-    <td>
-      Number of Stairs
-    </td>
-  </th>
-  <%@stairways.each do |stairway|%>
+  <thead>
     <tr>
-      <td>
-        <%= stairway.name %>
-      </td>
-      <td>
-        <%= stairway.stairs %>
-      </td>
+      <th><%= sortable "name" %></th>
+      <th><%= sortable "stairs" %></th>
     </tr>
+  </thead>
+  <tbody>
+    <%@stairways.each do |stairway|%>
+      <tr>
+        <td><%= stairway.name %></td>
+        <td><%= stairway.stairs %></td>
+      </tr>
+  </tbody>
   <%end%>
 </table>
