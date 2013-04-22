@@ -6,7 +6,9 @@ Stairchallenge::Application.routes.draw do
 
   # Sample of regular route:
   match 'map' => 'stairways#index'
-  resources :stairways
+  resources :stairways 
+  resources :user_runs
+
   # Keep in mind you can assign values other than :controller and :action
 
   # Sample of named route:
