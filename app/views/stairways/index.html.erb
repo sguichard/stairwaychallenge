@@ -7,16 +7,14 @@
 </head>
 <body>
 
-<%= gmaps( :kml => {:data => '[ { url:"http://www.communitywalk.com/xml/kml/388644?lat=47.628843&lng=-122.266846&zoom=11"}]' } ) %> <%= yield :scripts %>
+<%= gmaps("markers" => {"data" => @json, "options" => {"rich_marker" => true } }) %>
+<%= yield :scripts %>
 
 <table class="table">
   <th>
       Stairway Name
     <td>
       Number of Stairs
-    </td>
-    <td>
-      Times Completed by Everyone
     </td>
   </th>
   <%@stairways.each do |stairway|%>
@@ -26,9 +24,6 @@
       </td>
       <td>
         <%= stairway.stairs %>
-      </td>
-      <td>
-        <%= stairway.user_runs.count %>
       </td>
     </tr>
   <%end%>
