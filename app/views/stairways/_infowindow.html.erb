@@ -2,4 +2,4 @@
   <%= f.hidden_field :stairway_id, value: stairway.id %>
   <%= f.submit "Add run" %>
 <% end %>
-<%= stairway.description %>
+<%= stairway.description.html_safe %>
