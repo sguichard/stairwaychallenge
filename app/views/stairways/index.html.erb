@@ -15,6 +15,7 @@
     <tr>
       <th><%= sortable "name" %></th>
       <th><%= sortable "stairs" %></th>
+      <th><%= "Times Ran By You" %></th>
       <th><%= "Times Ran By Everyone" %></th>
     </tr>
   </thead>
@@ -23,6 +24,7 @@
       <tr>
         <td><%= stairway.name %></td>
         <td><%= stairway.stairs %></td>
+        <td><%= stairway.times_ran_by_user(@user) %></td>
         <td><%= stairway.user_runs.count %></td>
       </tr>
   </tbody>
