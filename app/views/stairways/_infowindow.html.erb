@@ -1,4 +1,5 @@
 <%= form_for stairway.user_runs.new, :url => user_runs_path do |f| %>
+  <%= f.hidden_field :stairway_id, value: stairway.id %>
   <%= f.submit "Add run" %>
 <% end %>
 <%= stairway.description %>
