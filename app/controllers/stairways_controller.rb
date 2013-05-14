@@ -6,7 +6,7 @@ class StairwaysController < ApplicationController
     @stairways = Stairway.order(sort_column + ' ' + sort_direction)
     @user = current_user
     @json = Stairway.all.to_gmaps4rails do |stairway, marker|
-      marker.infowindow render_to_string(:partial => "/stairways/infowindow", :locals => { :stairway => stairway})
+      marker.infowindow render_to_string(:partial => "/stairways/infowindow", :locals => { :stairway => stairway, :user => current_user})
     end
   end
 
